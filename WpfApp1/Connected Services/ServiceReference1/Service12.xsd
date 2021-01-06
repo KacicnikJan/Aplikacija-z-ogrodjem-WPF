@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="ArrayOfStudent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Student" nillable="true" type="tns:Student" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudent" nillable="true" type="tns:ArrayOfStudent" />
+  <xs:complexType name="Student">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Emso" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LetoRojstva" type="xs:int" />
+      <xs:element minOccurs="0" name="Priimek" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Student" nillable="true" type="tns:Student" />
+  <xs:complexType name="ArrayOfStudentski_dom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Studentski_dom" nillable="true" type="tns:Studentski_dom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudentski_dom" nillable="true" type="tns:ArrayOfStudentski_dom" />
+  <xs:complexType name="Studentski_dom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Leto_Nastanka" type="xs:int" />
+      <xs:element minOccurs="0" name="Stevilka_Doma" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Studentski_dom" nillable="true" type="tns:Studentski_dom" />
+</xs:schema>

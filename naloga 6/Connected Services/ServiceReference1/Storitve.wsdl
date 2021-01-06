@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="vpis">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uporabniško_ime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="geslo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vpisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="vpisResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PridobiVseStudente">
+        <s:complexType />
+      </s:element>
+      <s:element name="PridobiVseStudenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PridobiVseStudenteResult" type="tns:ArrayOfStudent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStudent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Student" nillable="true" type="tns:Student" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Student">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Emso" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priimek" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LetoRojstva" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PridobiVseDomove">
+        <s:complexType />
+      </s:element>
+      <s:element name="PridobiVseDomoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PridobiVseDomoveResult" type="tns:ArrayOfStudentski_dom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStudentski_dom">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Studentski_dom" nillable="true" type="tns:Studentski_dom" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Studentski_dom">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stevilka_Doma" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Leto_Nastanka" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PridobiVseStudenteVDomu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="stevilka_doma" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PridobiVseStudenteVDomuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PridobiVseStudenteVDomuResult" type="tns:ArrayOfStudent" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VrniStudenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="emso" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VrniStudentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VrniStudentaResult" type="tns:Student" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VrniDom">
+        <s:complexType />
+      </s:element>
+      <s:element name="VrniDomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VrniDomResult" type="tns:Studentski_dom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StudentVDomus">
+        <s:complexType />
+      </s:element>
+      <s:element name="StudentVDomusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StudentVDomusResult" type="tns:ArrayOfStudentVDomu" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStudentVDomu">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="StudentVDomu" nillable="true" type="tns:StudentVDomu" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StudentVDomu">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Student" type="tns:Student" />
+          <s:element minOccurs="0" maxOccurs="1" name="Dom" type="tns:Studentski_dom" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tip" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dolzina_bivanja" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IzpisNajstarejsega">
+        <s:complexType />
+      </s:element>
+      <s:element name="IzpisNajstarejsegaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IzpisNajstarejsegaResult" type="tns:Student" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IzpisPovprecneStarosti">
+        <s:complexType />
+      </s:element>
+      <s:element name="IzpisPovprecneStarostiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IzpisPovprecneStarostiResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DodajStudenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="student" type="tns:Student" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DodajStudentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DodajStudentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DodajStudentskiDom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dom" type="tns:Studentski_dom" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DodajStudentskiDomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DodajStudentskiDomResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DodajStudentaVDomu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="student" type="tns:Student" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentski_dom" type="tns:Studentski_dom" />
+            <s:element minOccurs="1" maxOccurs="1" name="dolzina_bivanja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="tip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DodajStudentaVDomuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DodajStudentaVDomuResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniStudenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniStudentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdstraniStudentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniDom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniDomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdstraniDomResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniStudentaizDomov">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniStudentaizDomovResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdstraniStudentaizDomovResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniDomIzStudentVDomu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OdstraniDomIzStudentVDomuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OdstraniDomIzStudentVDomuResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrediStudenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUporabnika" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="emso" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Priimek" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="leto_rojstva" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrediStudentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UrediStudentaResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrediDom">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="stevilkadoma" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UrediDomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UrediDomResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="vpisSoapIn">
+    <wsdl:part name="parameters" element="tns:vpis" />
+  </wsdl:message>
+  <wsdl:message name="vpisSoapOut">
+    <wsdl:part name="parameters" element="tns:vpisResponse" />
+  </wsdl:message>
+  <wsdl:message name="PridobiVseStudenteSoapIn">
+    <wsdl:part name="parameters" element="tns:PridobiVseStudente" />
+  </wsdl:message>
+  <wsdl:message name="PridobiVseStudenteSoapOut">
+    <wsdl:part name="parameters" element="tns:PridobiVseStudenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PridobiVseDomoveSoapIn">
+    <wsdl:part name="parameters" element="tns:PridobiVseDomove" />
+  </wsdl:message>
+  <wsdl:message name="PridobiVseDomoveSoapOut">
+    <wsdl:part name="parameters" element="tns:PridobiVseDomoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="PridobiVseStudenteVDomuSoapIn">
+    <wsdl:part name="parameters" element="tns:PridobiVseStudenteVDomu" />
+  </wsdl:message>
+  <wsdl:message name="PridobiVseStudenteVDomuSoapOut">
+    <wsdl:part name="parameters" element="tns:PridobiVseStudenteVDomuResponse" />
+  </wsdl:message>
+  <wsdl:message name="VrniStudentaSoapIn">
+    <wsdl:part name="parameters" element="tns:VrniStudenta" />
+  </wsdl:message>
+  <wsdl:message name="VrniStudentaSoapOut">
+    <wsdl:part name="parameters" element="tns:VrniStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="VrniDomSoapIn">
+    <wsdl:part name="parameters" element="tns:VrniDom" />
+  </wsdl:message>
+  <wsdl:message name="VrniDomSoapOut">
+    <wsdl:part name="parameters" element="tns:VrniDomResponse" />
+  </wsdl:message>
+  <wsdl:message name="StudentVDomusSoapIn">
+    <wsdl:part name="parameters" element="tns:StudentVDomus" />
+  </wsdl:message>
+  <wsdl:message name="StudentVDomusSoapOut">
+    <wsdl:part name="parameters" element="tns:StudentVDomusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IzpisNajstarejsegaSoapIn">
+    <wsdl:part name="parameters" element="tns:IzpisNajstarejsega" />
+  </wsdl:message>
+  <wsdl:message name="IzpisNajstarejsegaSoapOut">
+    <wsdl:part name="parameters" element="tns:IzpisNajstarejsegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IzpisPovprecneStarostiSoapIn">
+    <wsdl:part name="parameters" element="tns:IzpisPovprecneStarosti" />
+  </wsdl:message>
+  <wsdl:message name="IzpisPovprecneStarostiSoapOut">
+    <wsdl:part name="parameters" element="tns:IzpisPovprecneStarostiResponse" />
+  </wsdl:message>
+  <wsdl:message name="DodajStudentaSoapIn">
+    <wsdl:part name="parameters" element="tns:DodajStudenta" />
+  </wsdl:message>
+  <wsdl:message name="DodajStudentaSoapOut">
+    <wsdl:part name="parameters" element="tns:DodajStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DodajStudentskiDomSoapIn">
+    <wsdl:part name="parameters" element="tns:DodajStudentskiDom" />
+  </wsdl:message>
+  <wsdl:message name="DodajStudentskiDomSoapOut">
+    <wsdl:part name="parameters" element="tns:DodajStudentskiDomResponse" />
+  </wsdl:message>
+  <wsdl:message name="DodajStudentaVDomuSoapIn">
+    <wsdl:part name="parameters" element="tns:DodajStudentaVDomu" />
+  </wsdl:message>
+  <wsdl:message name="DodajStudentaVDomuSoapOut">
+    <wsdl:part name="parameters" element="tns:DodajStudentaVDomuResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniStudentaSoapIn">
+    <wsdl:part name="parameters" element="tns:OdstraniStudenta" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniStudentaSoapOut">
+    <wsdl:part name="parameters" element="tns:OdstraniStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniDomSoapIn">
+    <wsdl:part name="parameters" element="tns:OdstraniDom" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniDomSoapOut">
+    <wsdl:part name="parameters" element="tns:OdstraniDomResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniStudentaizDomovSoapIn">
+    <wsdl:part name="parameters" element="tns:OdstraniStudentaizDomov" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniStudentaizDomovSoapOut">
+    <wsdl:part name="parameters" element="tns:OdstraniStudentaizDomovResponse" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniDomIzStudentVDomuSoapIn">
+    <wsdl:part name="parameters" element="tns:OdstraniDomIzStudentVDomu" />
+  </wsdl:message>
+  <wsdl:message name="OdstraniDomIzStudentVDomuSoapOut">
+    <wsdl:part name="parameters" element="tns:OdstraniDomIzStudentVDomuResponse" />
+  </wsdl:message>
+  <wsdl:message name="UrediStudentaSoapIn">
+    <wsdl:part name="parameters" element="tns:UrediStudenta" />
+  </wsdl:message>
+  <wsdl:message name="UrediStudentaSoapOut">
+    <wsdl:part name="parameters" element="tns:UrediStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="UrediDomSoapIn">
+    <wsdl:part name="parameters" element="tns:UrediDom" />
+  </wsdl:message>
+  <wsdl:message name="UrediDomSoapOut">
+    <wsdl:part name="parameters" element="tns:UrediDomResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StoritveSoap">
+    <wsdl:operation name="vpis">
+      <wsdl:input message="tns:vpisSoapIn" />
+      <wsdl:output message="tns:vpisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudente">
+      <wsdl:input message="tns:PridobiVseStudenteSoapIn" />
+      <wsdl:output message="tns:PridobiVseStudenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseDomove">
+      <wsdl:input message="tns:PridobiVseDomoveSoapIn" />
+      <wsdl:output message="tns:PridobiVseDomoveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudenteVDomu">
+      <wsdl:input message="tns:PridobiVseStudenteVDomuSoapIn" />
+      <wsdl:output message="tns:PridobiVseStudenteVDomuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniStudenta">
+      <wsdl:input message="tns:VrniStudentaSoapIn" />
+      <wsdl:output message="tns:VrniStudentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniDom">
+      <wsdl:input message="tns:VrniDomSoapIn" />
+      <wsdl:output message="tns:VrniDomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentVDomus">
+      <wsdl:input message="tns:StudentVDomusSoapIn" />
+      <wsdl:output message="tns:StudentVDomusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IzpisNajstarejsega">
+      <wsdl:input message="tns:IzpisNajstarejsegaSoapIn" />
+      <wsdl:output message="tns:IzpisNajstarejsegaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IzpisPovprecneStarosti">
+      <wsdl:input message="tns:IzpisPovprecneStarostiSoapIn" />
+      <wsdl:output message="tns:IzpisPovprecneStarostiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudenta">
+      <wsdl:input message="tns:DodajStudentaSoapIn" />
+      <wsdl:output message="tns:DodajStudentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentskiDom">
+      <wsdl:input message="tns:DodajStudentskiDomSoapIn" />
+      <wsdl:output message="tns:DodajStudentskiDomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentaVDomu">
+      <wsdl:input message="tns:DodajStudentaVDomuSoapIn" />
+      <wsdl:output message="tns:DodajStudentaVDomuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudenta">
+      <wsdl:input message="tns:OdstraniStudentaSoapIn" />
+      <wsdl:output message="tns:OdstraniStudentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDom">
+      <wsdl:input message="tns:OdstraniDomSoapIn" />
+      <wsdl:output message="tns:OdstraniDomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudentaizDomov">
+      <wsdl:input message="tns:OdstraniStudentaizDomovSoapIn" />
+      <wsdl:output message="tns:OdstraniStudentaizDomovSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDomIzStudentVDomu">
+      <wsdl:input message="tns:OdstraniDomIzStudentVDomuSoapIn" />
+      <wsdl:output message="tns:OdstraniDomIzStudentVDomuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrediStudenta">
+      <wsdl:input message="tns:UrediStudentaSoapIn" />
+      <wsdl:output message="tns:UrediStudentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UrediDom">
+      <wsdl:input message="tns:UrediDomSoapIn" />
+      <wsdl:output message="tns:UrediDomSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StoritveSoap" type="tns:StoritveSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vpis">
+      <soap:operation soapAction="http://tempuri.org/vpis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudente">
+      <soap:operation soapAction="http://tempuri.org/PridobiVseStudente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseDomove">
+      <soap:operation soapAction="http://tempuri.org/PridobiVseDomove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudenteVDomu">
+      <soap:operation soapAction="http://tempuri.org/PridobiVseStudenteVDomu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniStudenta">
+      <soap:operation soapAction="http://tempuri.org/VrniStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniDom">
+      <soap:operation soapAction="http://tempuri.org/VrniDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentVDomus">
+      <soap:operation soapAction="http://tempuri.org/StudentVDomus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzpisNajstarejsega">
+      <soap:operation soapAction="http://tempuri.org/IzpisNajstarejsega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzpisPovprecneStarosti">
+      <soap:operation soapAction="http://tempuri.org/IzpisPovprecneStarosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudenta">
+      <soap:operation soapAction="http://tempuri.org/DodajStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentskiDom">
+      <soap:operation soapAction="http://tempuri.org/DodajStudentskiDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentaVDomu">
+      <soap:operation soapAction="http://tempuri.org/DodajStudentaVDomu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudenta">
+      <soap:operation soapAction="http://tempuri.org/OdstraniStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDom">
+      <soap:operation soapAction="http://tempuri.org/OdstraniDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudentaizDomov">
+      <soap:operation soapAction="http://tempuri.org/OdstraniStudentaizDomov" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDomIzStudentVDomu">
+      <soap:operation soapAction="http://tempuri.org/OdstraniDomIzStudentVDomu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediStudenta">
+      <soap:operation soapAction="http://tempuri.org/UrediStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediDom">
+      <soap:operation soapAction="http://tempuri.org/UrediDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StoritveSoap12" type="tns:StoritveSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vpis">
+      <soap12:operation soapAction="http://tempuri.org/vpis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudente">
+      <soap12:operation soapAction="http://tempuri.org/PridobiVseStudente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseDomove">
+      <soap12:operation soapAction="http://tempuri.org/PridobiVseDomove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudenteVDomu">
+      <soap12:operation soapAction="http://tempuri.org/PridobiVseStudenteVDomu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniStudenta">
+      <soap12:operation soapAction="http://tempuri.org/VrniStudenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniDom">
+      <soap12:operation soapAction="http://tempuri.org/VrniDom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentVDomus">
+      <soap12:operation soapAction="http://tempuri.org/StudentVDomus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzpisNajstarejsega">
+      <soap12:operation soapAction="http://tempuri.org/IzpisNajstarejsega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzpisPovprecneStarosti">
+      <soap12:operation soapAction="http://tempuri.org/IzpisPovprecneStarosti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudenta">
+      <soap12:operation soapAction="http://tempuri.org/DodajStudenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentskiDom">
+      <soap12:operation soapAction="http://tempuri.org/DodajStudentskiDom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentaVDomu">
+      <soap12:operation soapAction="http://tempuri.org/DodajStudentaVDomu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudenta">
+      <soap12:operation soapAction="http://tempuri.org/OdstraniStudenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDom">
+      <soap12:operation soapAction="http://tempuri.org/OdstraniDom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudentaizDomov">
+      <soap12:operation soapAction="http://tempuri.org/OdstraniStudentaizDomov" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDomIzStudentVDomu">
+      <soap12:operation soapAction="http://tempuri.org/OdstraniDomIzStudentVDomu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediStudenta">
+      <soap12:operation soapAction="http://tempuri.org/UrediStudenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediDom">
+      <soap12:operation soapAction="http://tempuri.org/UrediDom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Storitve">
+    <wsdl:port name="StoritveSoap" binding="tns:StoritveSoap">
+      <soap:address location="http://localhost:50851/Storitve.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StoritveSoap12" binding="tns:StoritveSoap12">
+      <soap12:address location="http://localhost:50851/Storitve.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

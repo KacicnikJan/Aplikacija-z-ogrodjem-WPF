@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp1.Dodatne"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Dodatne" Height="898.529" Width="886.765">
+    <Grid Margin="0,0,-8,-7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320*"/>
+            <ColumnDefinition Width="567*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btndodajstudenta" Content="Dodaj študenta" HorizontalAlignment="Left" Margin="23,24,0,0" VerticalAlignment="Top" Width="112" Click="btndodajstudenta_Click"/>
+        <Button x:Name="btndodajdom" Content="Dodaj dom" HorizontalAlignment="Left" Margin="161,24,0,0" VerticalAlignment="Top" Width="126" Click="btndodajdom_Click"/>
+        <Button x:Name="btnodstrani" Content="Odstrani študenta" HorizontalAlignment="Left" Margin="23,76,0,0" VerticalAlignment="Top" Width="112" Click="btnodstrani_Click"/>
+        <Button x:Name="btnodstranidom" Content="Odstrani dom" HorizontalAlignment="Left" Margin="161,76,0,0" VerticalAlignment="Top" Width="126" Click="btnodstranidom_Click"/>
+        <Button x:Name="btnuredistudenta" Content="Uredi studenta" HorizontalAlignment="Left" Margin="23,142,0,0" VerticalAlignment="Top" Width="112" Click="btnuredistudenta_Click"/>
+        <Button x:Name="btnuredidom" Content="Uredi dom" HorizontalAlignment="Left" Margin="161,142,0,0" VerticalAlignment="Top" Width="126" Click="btnuredidom_Click"/>
+        <DataGrid x:Name="gridstudentje" HorizontalAlignment="Left" Height="230" Margin="23,220,0,0" VerticalAlignment="Top" Width="559" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="griddomovi" HorizontalAlignment="Left" Height="266" Margin="23,484,0,0" VerticalAlignment="Top" Width="559" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnnazaj" Content="Nazaj" HorizontalAlignment="Left" Margin="23,801,0,0" VerticalAlignment="Top" Width="75" Click="btnnazaj_Click"/>
+
+    </Grid>
+</Window>

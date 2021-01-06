@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51402/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51402/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51402/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_vpis_InputMessage">
+    <wsdl:part name="parameters" element="tns:vpis" />
+  </wsdl:message>
+  <wsdl:message name="IService1_vpis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vpisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PridobiVseStudente_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiVseStudente" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PridobiVseStudente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiVseStudenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PridobiVseDomove_InputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiVseDomove" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PridobiVseDomove_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PridobiVseDomoveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniStudenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniStudenta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniStudenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IzpisNajstarejsega_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzpisNajstarejsega" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IzpisNajstarejsega_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzpisNajstarejsegaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniDom_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDom" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniDom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IzpisPovprecneStarosti_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzpisPovprecneStarosti" />
+  </wsdl:message>
+  <wsdl:message name="IService1_IzpisPovprecneStarosti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzpisPovprecneStarostiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DodajStudenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStudenta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DodajStudenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DodajStudentskiDom_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStudentskiDom" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DodajStudentskiDom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStudentskiDomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DodajStudentaVDomu_InputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStudentaVDomu" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DodajStudentaVDomu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DodajStudentaVDomuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniStudenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniStudenta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniStudenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniDom_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniDom" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniDom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniDomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniStudentaizDomov_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniStudentaizDomov" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniStudentaizDomov_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniStudentaizDomovResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniDomIzStudentVDomu_InputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniDomIzStudentVDomu" />
+  </wsdl:message>
+  <wsdl:message name="IService1_OdstraniDomIzStudentVDomu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OdstraniDomIzStudentVDomuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrediStudenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrediStudenta" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrediStudenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrediStudentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrediDom_InputMessage">
+    <wsdl:part name="parameters" element="tns:UrediDom" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UrediDom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UrediDomResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vpis">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/vpis" message="tns:IService1_vpis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/vpisResponse" message="tns:IService1_vpis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PridobiVseStudente" message="tns:IService1_PridobiVseStudente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PridobiVseStudenteResponse" message="tns:IService1_PridobiVseStudente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseDomove">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PridobiVseDomove" message="tns:IService1_PridobiVseDomove_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PridobiVseDomoveResponse" message="tns:IService1_PridobiVseDomove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniStudenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VrniStudenta" message="tns:IService1_VrniStudenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VrniStudentaResponse" message="tns:IService1_VrniStudenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzpisNajstarejsega">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzpisNajstarejsega" message="tns:IService1_IzpisNajstarejsega_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzpisNajstarejsegaResponse" message="tns:IService1_IzpisNajstarejsega_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniDom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VrniDom" message="tns:IService1_VrniDom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VrniDomResponse" message="tns:IService1_VrniDom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzpisPovprecneStarosti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/IzpisPovprecneStarosti" message="tns:IService1_IzpisPovprecneStarosti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/IzpisPovprecneStarostiResponse" message="tns:IService1_IzpisPovprecneStarosti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DodajStudenta" message="tns:IService1_DodajStudenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DodajStudentaResponse" message="tns:IService1_DodajStudenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentskiDom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DodajStudentskiDom" message="tns:IService1_DodajStudentskiDom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DodajStudentskiDomResponse" message="tns:IService1_DodajStudentskiDom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentaVDomu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DodajStudentaVDomu" message="tns:IService1_DodajStudentaVDomu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DodajStudentaVDomuResponse" message="tns:IService1_DodajStudentaVDomu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/OdstraniStudenta" message="tns:IService1_OdstraniStudenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/OdstraniStudentaResponse" message="tns:IService1_OdstraniStudenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/OdstraniDom" message="tns:IService1_OdstraniDom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/OdstraniDomResponse" message="tns:IService1_OdstraniDom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudentaizDomov">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/OdstraniStudentaizDomov" message="tns:IService1_OdstraniStudentaizDomov_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/OdstraniStudentaizDomovResponse" message="tns:IService1_OdstraniStudentaizDomov_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDomIzStudentVDomu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/OdstraniDomIzStudentVDomu" message="tns:IService1_OdstraniDomIzStudentVDomu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/OdstraniDomIzStudentVDomuResponse" message="tns:IService1_OdstraniDomIzStudentVDomu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrediStudenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrediStudenta" message="tns:IService1_UrediStudenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrediStudentaResponse" message="tns:IService1_UrediStudenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UrediDom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UrediDom" message="tns:IService1_UrediDom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UrediDomResponse" message="tns:IService1_UrediDom_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vpis">
+      <soap:operation soapAction="http://tempuri.org/IService1/vpis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseStudente">
+      <soap:operation soapAction="http://tempuri.org/IService1/PridobiVseStudente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PridobiVseDomove">
+      <soap:operation soapAction="http://tempuri.org/IService1/PridobiVseDomove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniStudenta">
+      <soap:operation soapAction="http://tempuri.org/IService1/VrniStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzpisNajstarejsega">
+      <soap:operation soapAction="http://tempuri.org/IService1/IzpisNajstarejsega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniDom">
+      <soap:operation soapAction="http://tempuri.org/IService1/VrniDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzpisPovprecneStarosti">
+      <soap:operation soapAction="http://tempuri.org/IService1/IzpisPovprecneStarosti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudenta">
+      <soap:operation soapAction="http://tempuri.org/IService1/DodajStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentskiDom">
+      <soap:operation soapAction="http://tempuri.org/IService1/DodajStudentskiDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DodajStudentaVDomu">
+      <soap:operation soapAction="http://tempuri.org/IService1/DodajStudentaVDomu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudenta">
+      <soap:operation soapAction="http://tempuri.org/IService1/OdstraniStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDom">
+      <soap:operation soapAction="http://tempuri.org/IService1/OdstraniDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniStudentaizDomov">
+      <soap:operation soapAction="http://tempuri.org/IService1/OdstraniStudentaizDomov" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OdstraniDomIzStudentVDomu">
+      <soap:operation soapAction="http://tempuri.org/IService1/OdstraniDomIzStudentVDomu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediStudenta">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrediStudenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UrediDom">
+      <soap:operation soapAction="http://tempuri.org/IService1/UrediDom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:51402/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

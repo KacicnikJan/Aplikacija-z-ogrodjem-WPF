@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.Navaden"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Navaden" Height="669" Width="986">
+    <Grid>
+        <Grid Margin="0,0,-159,-227">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnizpisvsehstudentov" Content="Izpis vseh študentov" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125" Height="20" Click="btnizpisvsehstudentov_Click"/>
+            <Button x:Name="btnizpisvsehdomov" Content="Izpis vseh domov" HorizontalAlignment="Left" Margin="162,10,0,0" VerticalAlignment="Top" Width="110" Height="20" Click="btnizpisvsehdomov_Click"/>
+            <Button x:Name="btnizpisdomaznajvecstudenti" Content="Izpis doma z največ študenti" HorizontalAlignment="Left" Margin="301,10,0,0" VerticalAlignment="Top" Width="159" Height="20" Click="btnizpisdomaznajvecstudenti_Click"/>
+            <Button x:Name="btnizpisinformacijonajstarejsemstudentu" Content="Izpis informacij o najstarejšem študentu" HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Width="221" Height="20" Click="btnizpisinformacijonajstarejsemstudentu_Click"/>
+            <Button x:Name="btnpovprecnoleto" Content="Povprečo leto rojstva vseh študentov" HorizontalAlignment="Left" Margin="739,10,0,0" VerticalAlignment="Top" Width="205" Height="20" Click="btnpovprecnoleto_Click"/>
+            <TextBox x:Name="txtbox1" HorizontalAlignment="Left" Height="23" Margin="15,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173"/>
+            <Button x:Name="btnizpisstudentovvdomu" Content="Izpis študentov v domu" HorizontalAlignment="Left" Margin="193,77,0,0" VerticalAlignment="Top" Width="146" Click="btnizpisstudentovvdomu_Click"/>
+            <TextBox x:Name="txtbox2" HorizontalAlignment="Left" Height="23" Margin="344,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.535,-0.212"/>
+            <Button x:Name="btnzipisdomastudenta" Content="Izpis doma študenta" HorizontalAlignment="Left" Margin="503,77,0,0" VerticalAlignment="Top" Width="147" Click="btnzipisdomastudenta_Click"/>
+            <TextBox x:Name="txtbox3" HorizontalAlignment="Left" Height="23" Margin="655,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.406,0.55"/>
+            <Button x:Name="btnizpisinformacijostudentu" Content="Izpis informacij o študentu" HorizontalAlignment="Left" Margin="780,77,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="0.388,-0.097" Click="btnizpisinformacijostudentu_Click"/>
+            <DataGrid x:Name="studentjeGrid" HorizontalAlignment="Left" Height="215" Margin="26,123,0,0" VerticalAlignment="Top" Width="890"/>
+
+            <DataGrid x:Name="domoviGrid" HorizontalAlignment="Left" Height="198" Margin="26,378,0,0" VerticalAlignment="Top" Width="890"/>
+           
+            <Button x:Name="btnzapri" Content="Zapri prikaz" HorizontalAlignment="Left" Margin="26,353,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.074,0.535" Click="btnzapri_Click"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
